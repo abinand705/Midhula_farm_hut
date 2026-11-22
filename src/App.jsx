@@ -123,8 +123,8 @@ export default function App() {
             />
 
             {/* Farm Story & Heritage Features */}
-            <FarmStory 
-              onNavigateToShop={navigateToShop} 
+            <FarmStory
+              onNavigateToShop={navigateToShop}
             />
 
             {/* In-page Live Stock Collection Preview */}
@@ -138,8 +138,8 @@ export default function App() {
             <TankmateChecker />
 
             {/* Visit & Contact Information */}
-            <LocationSection 
-              onOpenBag={() => setIsBagOpen(true)} 
+            <LocationSection
+              onOpenBag={() => setIsBagOpen(true)}
             />
           </div>
         ) : (
