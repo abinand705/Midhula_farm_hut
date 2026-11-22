@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FAF8F3;
+    color: #1A2421;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Explicit guaranteed color utilities matching midhula_farm_hut.html */
+.bg-backwater {
+  background-color: #0B3B3C !important;
+}
+
+.text-backwater {
+  color: #0B3B3C !important;
+}
+
+.border-backwater {
+  border-color: #0B3B3C !important;
+}
+
+.hover\:bg-backwater:hover {
+  background-color: #0B3B3C !important;
+}
+
+.bg-lagoon {
+  background-color: #136F63 !important;
+}
+
+.text-lagoon {
+  color: #136F63 !important;
+}
+
+.border-lagoon {
+  border-color: #136F63 !important;
+}
+
+.hover\:bg-lagoon:hover {
+  background-color: #136F63 !important;
+}
+
+.bg-coral {
+  background-color: #175a1a !important;
+}
+
+.text-coral {
+  color: #E06D3B !important;
+}
+
+.border-coral {
+  border-color: #E06D3B !important;
+}
+
+.hover\:bg-coral:hover {
+  background-color: #E06D3B !important;
+}
+
+.bg-cream {
+  background-color: #FAF8F3 !important;
+}
+
+.bg-sand {
+  background-color: #EFECE4 !important;
+}
+
+.card-hover {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -10px rgba(11, 59, 60, 0.14);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
