@@ -1,19 +1,19 @@
 import React from 'react';
-import { 
-  MapPin, 
-  ArrowDown, 
-  Star, 
-  Phone, 
+import {
+  MapPin,
+  ArrowDown,
+  Star,
+  Phone,
   ArrowRight,
-  ExternalLink 
+  ExternalLink
 } from 'lucide-react';
 
 function InstagramIcon({ className = "w-4 h-4" }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
     </svg>
   );
 }
@@ -21,7 +21,7 @@ function InstagramIcon({ className = "w-4 h-4" }) {
 function YoutubeIcon({ className = "w-4 h-4" }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/>
+      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z" />
     </svg>
   );
 }
@@ -31,9 +31,9 @@ export default function HeroSection({ onNavigateToShop, onNavigateToVisit }) {
     <section className="relative overflow-hidden bg-backwater text-white">
       {/* Background Hero Image */}
       <div className="absolute inset-0">
-        <img 
-          src="/images/hero.jpg" 
-          alt="Midhula Farm Hut Kerala" 
+        <img
+          src="/images/hero.jpg"
+          alt="Midhula Farm Hut Kerala"
           className="w-full h-full object-cover"
           onError={(e) => {
             e.currentTarget.style.display = 'none';
@@ -69,20 +69,20 @@ export default function HeroSection({ onNavigateToShop, onNavigateToVisit }) {
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <a 
-                href="https://www.instagram.com/midhula_farm_hut/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.instagram.com/midhula_farm_hut/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white text-sm font-medium transition-colors"
               >
                 <InstagramIcon className="w-4 h-4 text-pink-300" />
                 <span>@midhula_farm_hut</span>
               </a>
 
-              <a 
-                href="https://www.youtube.com/@Midhula_Farm_Hut" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.youtube.com/@Midhula_Farm_Hut"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white text-sm font-medium transition-colors"
               >
                 <YoutubeIcon className="w-4 h-4 text-red-400" />
@@ -114,9 +114,9 @@ export default function HeroSection({ onNavigateToShop, onNavigateToVisit }) {
           <div className="lg:col-span-5">
             <div className="bg-white/95 backdrop-blur-md text-slate-900 rounded-2xl p-4 sm:p-5 shadow-2xl border border-white/40">
               <div className="relative rounded-xl overflow-hidden aspect-[16/9] mb-4 bg-slate-100">
-                <img 
-                  src="/images/spotlight.jpg" 
-                  alt="Midhula Farm Hut Ponds" 
+                <img
+                  src="/images/spotlight.jpg"
+                  alt="Midhula Farm Hut Ponds"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.currentTarget.src = '/images/hero.jpg';
@@ -137,14 +137,14 @@ export default function HeroSection({ onNavigateToShop, onNavigateToVisit }) {
                 </div>
               </div>
               <div className="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs sm:text-sm">
-                <a 
-                  href="tel:+918129120437" 
+                <a
+                  href="tel:+918129120437"
                   className="inline-flex items-center gap-1.5 font-medium text-slate-700 hover:text-lagoon"
                 >
                   <Phone className="w-4 h-4 text-coral" />
                   <span>+91 81291 20437</span>
                 </a>
-                <button 
+                <button
                   onClick={onNavigateToVisit}
                   className="font-semibold text-coral hover:underline"
                 >
