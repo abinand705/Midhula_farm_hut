@@ -1,20 +1,20 @@
 import React, { useState, useMemo } from 'react';
-import {
-  Search,
-  ArrowLeft,
-  PlusCircle,
-  Info,
-  SlidersHorizontal,
-  Check,
+import { 
+  Search, 
+  ArrowLeft, 
+  PlusCircle, 
+  Info, 
+  SlidersHorizontal, 
+  Check, 
   ExternalLink,
   MessageCircle
 } from 'lucide-react';
 import { SPECIES_DATA, CATEGORIES, TEMPERAMENTS } from '../data/fishData';
 
-export default function FishCatalogPage({
-  onNavigateHome,
-  onSelectFish,
-  onAddToBag
+export default function FishCatalogPage({ 
+  onNavigateHome, 
+  onSelectFish, 
+  onAddToBag 
 }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedTemperament, setSelectedTemperament] = useState('All');
@@ -64,7 +64,7 @@ export default function FishCatalogPage({
   };
 
   return (
-    <section id="collection" className="w-full max-w-[1800px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-10 sm:py-16">
+    <section id="collection" className="w-full max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-10 sm:py-16">
       {/* Top Breadcrumb & Heading */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div>
@@ -78,29 +78,29 @@ export default function FishCatalogPage({
           <span className="block text-xs font-bold uppercase tracking-wider text-lagoon">
             Our Breeding Stock
           </span>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-backwater mt-1">
+          <h1 className="font-serif text-2xl sm:text-4xl font-bold text-backwater mt-1">
             Aquarium Fishes &amp; Shrimps
           </h1>
-          <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-3xl leading-relaxed">
-            Browse our popular farm-bred varieties. Add species to your Inquiry Bag to request current pair or wholesale pricing directly from the farm in Chembuchira, Thrissur.
+          <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-2xl">
+            Browse our popular farm-bred varieties. Add species to your Inquiry Bag to request current pair or wholesale pricing directly from the farm.
           </p>
         </div>
 
         {/* Search Box */}
-        <div className="relative w-full md:w-80 lg:w-96 shrink-0">
+        <div className="relative w-full md:w-72 shrink-0">
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search species, temperament, Malayalam name..."
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#DFDBD0] bg-white text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-lagoon/40 shadow-xs"
+            placeholder="Search species, temperament..."
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#DFDBD0] bg-white text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-lagoon/40"
           />
         </div>
       </div>
 
       {/* Filter Bar */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8 pb-3 border-b border-[#E6E2D8]">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8">
         {/* Category Buttons */}
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
           {CATEGORIES.map((cat) => {
@@ -110,11 +110,11 @@ export default function FishCatalogPage({
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm whitespace-nowrap transition-colors ${isActive
-                  ? 'font-semibold bg-backwater text-white shadow-sm'
-                  : 'font-medium bg-white border border-[#DFDBD0] text-slate-700 hover:border-lagoon'
-                  }`}
-                style={isActive ? { backgroundColor: '#0B3B3C', color: '#FFFFFF' } : {}}
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm whitespace-nowrap transition-colors ${
+                  isActive
+                    ? 'font-semibold bg-backwater text-white shadow-sm'
+                    : 'font-medium bg-white border border-[#DFDBD0] text-slate-700 hover:border-lagoon'
+                }`}
               >
                 {cat === 'All' ? 'All Species' : cat}
               </button>
@@ -131,7 +131,7 @@ export default function FishCatalogPage({
             id="temperamentFilter"
             value={selectedTemperament}
             onChange={(e) => setSelectedTemperament(e.target.value)}
-            className="px-3.5 py-2 rounded-xl bg-white border border-[#DFDBD0] text-xs sm:text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-lagoon/40 cursor-pointer shadow-xs"
+            className="px-3 py-2 rounded-xl bg-white border border-[#DFDBD0] text-xs sm:text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-lagoon/40 cursor-pointer"
           >
             {TEMPERAMENTS.map((temp) => (
               <option key={temp} value={temp}>
@@ -142,13 +142,13 @@ export default function FishCatalogPage({
         </div>
       </div>
 
-      {/* Species Grid - 4 Columns on Large and Widescreen Displays */}
+      {/* Species Grid */}
       {filteredSpecies.length > 0 ? (
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 xl:gap-7">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-6">
           {filteredSpecies.map((fish) => (
             <div
               key={fish.id}
-              className="bg-white rounded-2xl border border-[#E6E2D8] overflow-hidden card-hover flex flex-col justify-between shadow-xs"
+              className="bg-white rounded-2xl border border-[#E6E2D8] overflow-hidden card-hover flex flex-col justify-between"
             >
               <div>
                 {/* Photo & Overlays */}
@@ -162,10 +162,10 @@ export default function FishCatalogPage({
                       e.currentTarget.src = '/images/hero.jpg';
                     }}
                   />
-                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-backwater/85 backdrop-blur-sm text-white shadow-xs">
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-backwater/80 backdrop-blur-sm text-white">
                     {fish.category}
                   </span>
-                  <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-white/95 backdrop-blur-sm text-backwater shadow-xs">
+                  <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-white/90 backdrop-blur-sm text-backwater">
                     {fish.temperament}
                   </span>
                 </div>
@@ -187,7 +187,7 @@ export default function FishCatalogPage({
                       )}
                     </div>
                     <div className="text-right shrink-0">
-                      <span className="text-base font-black text-lagoon font-serif block">
+                      <span className="text-sm font-black text-lagoon font-serif block">
                         ₹{fish.price}
                       </span>
                       <span className="text-[10px] text-slate-500 block">
@@ -220,19 +220,19 @@ export default function FishCatalogPage({
                 <button
                   type="button"
                   onClick={() => onSelectFish(fish)}
-                  className="col-span-4 py-2.5 rounded-xl border border-[#DFDBD0] hover:border-lagoon text-slate-700 text-xs font-semibold transition-colors flex items-center justify-center gap-1 bg-white"
+                  className="col-span-4 py-2.5 rounded-xl border border-[#DFDBD0] hover:border-lagoon text-slate-700 text-xs font-semibold transition-colors flex items-center justify-center gap-1"
                 >
                   <Info className="w-3.5 h-3.5 text-slate-500" />
-                  <span>Specs</span>
+                  <span>Details</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => onAddToBag(fish)}
-                  className="col-span-6 py-2.5 rounded-xl bg-coral hover:bg-[#cc5d2d] text-white text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-sm active:scale-95"
+                  className="col-span-6 py-2.5 rounded-xl bg-coral hover:bg-[#11562b] text-white text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-sm active:scale-95"
                 >
                   <PlusCircle className="w-3.5 h-3.5" />
-                  <span>+ Bag</span>
+                  <span>+ Add to Bag</span>
                 </button>
 
                 <a
@@ -250,18 +250,17 @@ export default function FishCatalogPage({
         </div>
       ) : (
         /* Empty State */
-        <div className="text-center py-16 px-4 bg-white rounded-2xl border border-[#E6E2D8] shadow-sm">
-          <h3 className="font-serif text-xl font-bold text-backwater">
+        <div className="text-center py-14 px-4 bg-white rounded-2xl border border-[#E6E2D8]">
+          <h3 className="font-serif text-lg font-bold text-backwater">
             No matching species found
           </h3>
-          <p className="text-sm text-slate-600 mt-1 max-w-md mx-auto">
-            Try clearing your search query or switching to another category filter.
+          <p className="text-sm text-slate-600 mt-1">
+            Try clearing your search or switching category filters.
           </p>
           <button
             type="button"
             onClick={handleResetFilters}
-            className="mt-5 px-5 py-2.5 rounded-xl bg-backwater text-white text-sm font-semibold hover:bg-lagoon transition-colors shadow-sm"
-            style={{ backgroundColor: '#0B3B3C', color: '#FFFFFF' }}
+            className="mt-4 px-4 py-2 rounded-xl bg-backwater text-white text-sm font-medium hover:bg-lagoon transition-colors"
           >
             Reset Filters
           </button>

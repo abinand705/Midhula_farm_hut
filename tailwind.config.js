@@ -9,7 +9,7 @@ export default {
       colors: {
         backwater: '#0B3B3C',
         lagoon: '#136F63',
-        coral: '#E06D3B',
+        coral: '#166e37',
         cream: '#FAF8F3',
         sand: '#EFECE4',
       },

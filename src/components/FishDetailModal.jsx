@@ -85,7 +85,7 @@ export default function FishDetailModal({ fish, onClose, onAddToBag }) {
                 onAddToBag(fish);
                 onClose();
               }}
-              className="w-full py-3 rounded-xl bg-coral hover:bg-[#cc5d2d] text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2 shadow-sm active:scale-95"
+              className="w-full py-3 rounded-xl bg-coral hover:bg-[#11562b] text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2 shadow-sm active:scale-95"
             >
               <PlusCircle className="w-4 h-4" />
               <span>Add to Inquiry Bag • ₹{fish.price}</span>
